@@ -2,20 +2,36 @@
 
 const config = {
     server: {
-        port: 8001,
+        value: {
+            port: 8001,
+        },
+        configurable: true,
+        enumerable: true,
+        writable: false,
+
     },
 
     staticServer: {
-        port: 8000,
+        value: {
+            port: 8000,
+        },
+        configurable: true,
+        enumerable: true,
+        writable: false,
     },
 
     db: {
-        host: '127.0.0.1',
-        port: 5432,
-        database: 'example',
-        user: 'marcus',
-        password: 'marcus',
-    }
+        value: {
+            host: '127.0.0.1',
+            port: 5432,
+            database: 'example',
+            user: 'marcus',
+            password: 'marcus',
+        },
+        configurable: true,
+        enumerable: true,
+        writable: false,
+    },
 };
 
 module.exports = Object.create(null, config);
