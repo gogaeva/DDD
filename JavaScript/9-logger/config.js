@@ -32,6 +32,13 @@ const config = {
         enumerable: true,
         writable: false,
     },
+
+    transport: {
+        value: 'ws',
+        configurable: true,
+        enumerable: true,
+        writable: false,
+    }
 };
 
 module.exports = Object.create(null, config);
