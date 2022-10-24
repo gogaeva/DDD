@@ -3,6 +3,7 @@
 const config = {
     server: {
         value: {
+            addr: '127.0.0.1',
             port: 8001,
         },
         configurable: true,
@@ -13,6 +14,7 @@ const config = {
 
     staticServer: {
         value: {
+            addr: '127.0.0.1',
             port: 8000,
         },
         configurable: true,
