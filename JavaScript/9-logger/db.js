@@ -42,7 +42,7 @@ module.exports = (table) => ({
     }
     const fields = '"' + keys.join('", "') + '"';
     const params = nums.join(', ');
-    const sql = `INSERT INTO "${table}" (${fields}) VALUES (${params})`;
+    const sql = `INSERT INTO "${table}" (${fields}) VALUES (${params}) RETURNING id`;
     return pool.query(sql, data);
   },
 
