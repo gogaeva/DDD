@@ -9,7 +9,8 @@ const hash = require('./hash.js');
 const logger = require('./logger.js');
 const config = require('./config.js');
 
-const server = require(`./${config.transport}.js`);
+const protocol = config.transport;
+const server = require(`./${protocol}.js`);
 
 const sandbox = {
   console: Object.freeze(logger),
