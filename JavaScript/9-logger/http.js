@@ -20,10 +20,13 @@ module.exports = (routing, port) => {
     const src = handler.toString();
     const signature = src.substring(0, src.indexOf(')'));
     const args = [];
-    if (signature.includes('(id')) args.push(id);
+    //if (signature.includes('(id')) args.push(id);
+    if (id) args.push(id);
     if (signature.includes('{')) args.push(await receiveArgs(req));
     console.log(`${socket.remoteAddress} ${method} ${url}`);
     const result = await handler(...args);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.end(JSON.stringify(result.rows));
   }).listen(port);
 
