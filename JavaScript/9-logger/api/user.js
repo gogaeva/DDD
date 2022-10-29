@@ -9,8 +9,10 @@
   },
 
   async update(id, { login, password }) {
-    const passwordHash = await common.hash(password);
-    return db('users').update(id, { login, password: passwordHash });
+    const delta = {};
+    if (login) delta.login = login;
+    if (password) delta.password = await common.hash(password);
+    return db('users').update(id, delta);
   },
 
   delete(id) {
