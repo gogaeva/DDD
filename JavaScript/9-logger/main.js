@@ -9,7 +9,7 @@ const hash = require('./hash.js');
 const logger = require('./logger.js');
 const config = require('./config.js');
 
-const protocol = config.transport;
+const protocol = config.api.transport;
 const server = require(`./${protocol}.js`);
 
 const sandbox = {
@@ -29,6 +29,6 @@ const routing = {};
     routing[serviceName] = await load(filePath, sandbox);
   }
 
-  staticServer('./static', config.staticServer.port);
-  server(routing, config.server.port);
+  staticServer('./static', config.static.port);
+  server(routing, config.api.port);
 })();

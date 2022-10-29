@@ -1,46 +1,21 @@
 'use strict';
 
-const config = {
-    server: {
-        value: {
-            addr: '127.0.0.1',
-            port: 8001,
-        },
-        configurable: true,
-        enumerable: true,
-        writable: false,
-
+module.exports = {
+    api: {
+        host: '127.0.0.1',
+        port: 8001,
+        transport: 'ws',
     },
-
-    staticServer: {
-        value: {
-            addr: '127.0.0.1',
-            port: 8000,
-        },
-        configurable: true,
-        enumerable: true,
-        writable: false,
+    static: {
+        host: '127.0.0.1',
+        port: 8000,
     },
-
     db: {
-        value: {
-            host: '127.0.0.1',
-            port: 5432,
-            database: 'example',
-            user: 'marcus',
-            password: 'marcus',
-        },
-        configurable: true,
-        enumerable: true,
-        writable: false,
+        host: '127.0.0.1',
+        port: 5432,
+        database: 'example',
+        user: 'marcus',
+        password: 'marcus',
     },
-
-    transport: {
-        value: 'ws',
-        configurable: true,
-        enumerable: true,
-        writable: false,
-    }
 };
 
-module.exports = Object.create(null, config);
